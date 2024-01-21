@@ -20,7 +20,7 @@
             font-weight: 700;
         }
 
-        .btn.buy-now, button, focus {
+        .btn.buy-now, button:focus {
             outline: none;
             border: none;
             width: 30%;
