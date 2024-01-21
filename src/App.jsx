@@ -1,7 +1,10 @@
 import { useEffect, useEffectOnce, useState } from 'react';
+import axios from 'axios';
+
 import './styles/App.css';
 import Card from './components/Card';
-import axios from 'axios';
+import LoadingComponent from './components/LoadingComponent';
+import FetchErrorComponent from './components/FetchErrorComponent';
 
 export default function App() {
 
@@ -12,13 +15,16 @@ export default function App() {
   const fetchData = async () => {
     axios.get("http://localhost:3001/expos")
     .then((response) => {
-      console.log(response);
+
+      setLoading(false);
       const exposData = response.data;
       setData(exposData)
-    }).catch((error) => {
+    })
+    .catch((error) => {
+
       setLoading(false);
       setHasError(true);
-      console.log(error);
+      console.error(error);
     });
   }
 
@@ -29,8 +35,8 @@ export default function App() {
   return (
     <main>
       {data.map((item) => <Card item={item} />)}
-      {hasError && (<div class="interactive error">Error</div>)}
-      {loading && (<div>Loading</div>)}
+      {hasError && (<FetchErrorComponent />)}
+      {loading && (<LoadingComponent />)}
     </main>
   )
 }
