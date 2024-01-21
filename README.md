@@ -30,3 +30,15 @@ pnpm run start
 ```
 
 The app should be running at localhost at port 3000
+
+
+## Preview
+
+### Mobile Preview
+![Mobile Preview](https://github.com/MuriithiMark/pure-react-template/blob/main/mobile.png)
+
+### Tablet Preview
+![Tablet Preview](https://github.com/MuriithiMark/pure-react-template/blob/main/medium.png)
+
+### Desktop Preview
+![Desktop Preview](https://github.com/MuriithiMark/pure-react-template/blob/main/desktop.png)
